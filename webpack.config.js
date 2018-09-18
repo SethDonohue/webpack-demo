@@ -4,6 +4,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     entry: './src/index.js',
@@ -13,7 +14,8 @@ module.exports = {
     },
     devtool: "inline-source-map",
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        hot: true
     },
     optimization: {
         minimizer: [
@@ -30,7 +32,8 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             title: 'Output Management'
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ],
     module: {
         rules: [
