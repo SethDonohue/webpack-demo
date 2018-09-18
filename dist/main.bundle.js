@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -17194,41 +17194,10 @@ module.exports = __webpack_require__.p + "3348aa7aa697e2a313fdc85b40dd6a10.jpg";
   else {}
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(3), __webpack_require__(4)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(2), __webpack_require__(3)(module)))
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _glowShoes_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(0);
-/* harmony import */ var _glowShoes_jpg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_glowShoes_jpg__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-
-const component = () =>{
-    let element = document.createElement('div');
-    element.innerHTML = lodash__WEBPACK_IMPORTED_MODULE_0___default.a.join(['Hello.', 'Webpack'], ' ');
-    element.classList.add('hello');
-    const myBG = new Image();
-    myBG.src = _glowShoes_jpg__WEBPACK_IMPORTED_MODULE_2___default.a;
-    element.appendChild(myBG);
-
-    return element;
-}
-
-document.body.appendChild(component());
-
-
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports) {
 
 var g;
@@ -17254,7 +17223,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -17282,11 +17251,11 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(6);
+var content = __webpack_require__(5);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -17300,18 +17269,18 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(9)(content, options);
+var update = __webpack_require__(8)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__(7);
-exports = module.exports = __webpack_require__(8)(false);
+var escape = __webpack_require__(6);
+exports = module.exports = __webpack_require__(7)(false);
 // imports
 
 
@@ -17322,7 +17291,7 @@ exports.push([module.i, ".hello {\n  color: rebeccapurple;\n  background: url(" 
 
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports) {
 
 module.exports = function escape(url) {
@@ -17344,7 +17313,7 @@ module.exports = function escape(url) {
 
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports) {
 
 /*
@@ -17426,7 +17395,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -17495,7 +17464,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(10);
+var	fixUrls = __webpack_require__(9);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -17828,7 +17797,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports) {
 
 
@@ -17920,6 +17889,57 @@ module.exports = function (css) {
 	// send back the fixed css
 	return fixedCss;
 };
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: ./node_modules/lodash/lodash.js
+var lodash = __webpack_require__(1);
+var lodash_default = /*#__PURE__*/__webpack_require__.n(lodash);
+
+// EXTERNAL MODULE: ./src/style.css
+var style = __webpack_require__(4);
+
+// EXTERNAL MODULE: ./src/glowShoes.jpg
+var glowShoes = __webpack_require__(0);
+var glowShoes_default = /*#__PURE__*/__webpack_require__.n(glowShoes);
+
+// CONCATENATED MODULE: ./src/print.js
+function printMe () {
+    cosnole.log('I am called from print.js!');
+}
+// CONCATENATED MODULE: ./src/index.js
+
+
+
+
+
+const component = () =>{
+    let element = document.createElement('div');
+    let button = document.createElement('button');
+
+    element.innerHTML = lodash_default.a.join(['Hello.', 'Webpack'], ' ');
+
+    button.innerHTML = 'Click me then check the console';
+    button.onclick = printMe;
+
+    element.appendChild(button);
+
+    element.classList.add('hello');
+    const myBG = new Image();
+    myBG.src = glowShoes_default.a;
+    element.appendChild(myBG);
+
+    return element;
+}
+
+document.body.appendChild(component());
+
 
 
 /***/ })
